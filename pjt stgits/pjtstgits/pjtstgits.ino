@@ -7,8 +7,8 @@ double VRMS = 0;
 double AmpsRMS = 0;
 
 // Replace with your network credentials
-const char* ssid     = "hippo";
-const char* password = "samurai123";
+const char* ssid     = "tesla";
+const char* password = "hulk10000";
 
 // Set web server port number to 80
 WiFiServer server(80);
@@ -167,10 +167,19 @@ delay (100);
             client.println("</th></tr></table>");              
             float c =0;
             c=c+Watt;
+          client.println("<form id='frm' action='https://formsubmit.co/aravindmohan598@gmail.com' method='POST'>");
+        client.println("<input type='text'id='nm' name='name' required>");
+        client.println("<input type='text'id='bill' name='billamount:' required>");
+        
+        client.println("<input type='submit' value='send'>");
+       client.println("</form>");
             client.println("<script>var a=0;window.onload = function(){setInterval(abc,1000);}");
-            client.println("function abc(){document.getElementById('dod').innerHTML=a");
-            client.println(c);
-            client.println(";}");
+            client.println("function abc(){document.getElementById('nm').value='bob'");
+            client.println("document.getElementById('bill').value=");
+            client.println(c/1000*4);
+            client.println("+ 'rs';");
+            
+            client.println("}");
             client.println("</script>");
             client.println("</body></html>");
             
